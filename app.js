@@ -17,11 +17,14 @@ async function consultaCEP(cep) {
         cidade: resposta.localidade,
         estado: resposta.estado,
     }
+    injetarHTML(cepUsuario)
+}
+
+ function injetarHTML(cepUsuario){
     enderecoUsuario.rua.innerText = cepUsuario.rua
     enderecoUsuario.bairro.innerText = cepUsuario.bairro
     enderecoUsuario.cidade.innerText = cepUsuario.cidade
     enderecoUsuario.estado.innerText = cepUsuario.estado
-
 }
 
 consultaCEP(enderecoUsuario.cep)
